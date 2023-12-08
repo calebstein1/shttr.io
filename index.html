@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .animate-entrance {
+            animation: animateEntrance 1s;
+        }
+        @keyframes animateEntrance {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 4rem, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateZ(0);
+            }
+        }
+    </style>
+    <script src="bootstrap.bundle.min.js"></script>
+    <title>Shell on the Shttr</title>
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center vh-100 animate-entrance">
+        <h1 class="display-1 fw-bold text-primary">Shell on the Shttr</h1>
+        <h1 class="display-6 fw-bold text-info">Forward-looking web apps built on traditional, time-tested technologies</h1>
+        <div class="d-flex justify-content-center gap-4 mt-1">
+            <button class="btn btn-success rounded-5" data-bs-toggle="modal" data-bs-target="#download">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+                Download Now
+            </button>
+            <a target="_blank" href="https://github.com/calebstein1/sh-on-the-shttr">
+                <button class="btn btn-primary rounded-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                    </svg>
+                    View on Github
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="modal fade" id="download" tabindex="-1" aria-labelledby="downloadLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="downloadLabel">Download Shttr</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="d-flex flex-column gap-2 list-unstyled">
+              <li>
+                  Shell on the Shttr is managed through the Shttr CLI.
+              </li>
+              <li>
+                  To install Shell on the Shttr, download the installer script, then run the following in your terminal:
+              </li>
+              <li>
+                  <code>
+                      cd ~/Downloads<br>
+                      chmod +x install.sh<br>
+                      sudo ./install.sh
+                  </code>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="downloadDismiss">Close</button>
+              <a href="install.sh" download>
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Download Installer</button>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" defer>
+        const myModal = document.getElementById('download');
+        const myInput = document.getElementById('downloadDismiss');
+
+        myModal.addEventListener('shown.bs.modal', () => {
+            myInput.focus();
+        });
+    </script>
+</body>
+</html>
