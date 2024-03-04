@@ -24,13 +24,16 @@ mkdir -p /usr/local/share/shttr-cli
 echo "Downloading Shttr CLI..."
 wget "https://raw.githubusercontent.com/calebstein1/shttr-cli/main/shttr"
 wget "https://raw.githubusercontent.com/calebstein1/shttr-cli/main/shttr-dbg"
+wget "https://raw.githubusercontent.com/calebstein1/shttr-cli/main/shttr-static"
 wget "https://raw.githubusercontent.com/calebstein1/shttr-cli/main/shttr-systemd"
 
 echo "Installing Shttr CLI..."
 mv shttr /usr/local/bin
 mv shttr-dbg /usr/local/bin
+mv shttr-static /usr/local/bin
 mv shttr-systemd /usr/local/share/shttr-cli
 chmod +x /usr/local/bin/shttr
 chmod +x /usr/local/bin/shttr-dbg
+chmod +x /usr/local/bin/shttr-static
 
 echo "Shttr CLI installed successfully!"
